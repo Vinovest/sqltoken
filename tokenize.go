@@ -31,7 +31,7 @@ const (
 func combineOkay(t TokenType) bool {
 	// nolint:exhaustive
 	switch t {
-	case Number, QuestionMark, DollarNumber, ColonWord:
+	case Number, QuestionMark, DollarNumber, ColonWord, Punctuation:
 		return false
 	}
 	return true

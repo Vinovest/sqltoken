@@ -95,11 +95,18 @@ var commonCases = []Tokens{
 	},
 	{
 		{Type: Word, Text: "c10"},
-		{Type: Punctuation, Text: "-//"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "/"},
+		{Type: Punctuation, Text: "/"},
 	},
 	{
 		{Type: Word, Text: "c11"},
-		{Type: Punctuation, Text: "-//-/-"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "/"},
+		{Type: Punctuation, Text: "/"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "/"},
+		{Type: Punctuation, Text: "-"},
 		{Type: Whitespace, Text: " "},
 	},
 	{
@@ -109,7 +116,8 @@ var commonCases = []Tokens{
 		{Type: Whitespace, Text: "\r\n"},
 		{Type: Literal, Text: `";"`},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "-/"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "/"},
 		{Type: Literal, Text: `";"`},
 		{Type: Whitespace, Text: " "},
 	},
@@ -121,7 +129,8 @@ var commonCases = []Tokens{
 		{Type: Literal, Text: "';'"},
 		{Type: Whitespace, Text: " "},
 		{Type: Comment, Text: "/*;*/"},
-		{Type: Punctuation, Text: "-/"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "/"},
 		{Type: Literal, Text: "';'"},
 		{Type: Whitespace, Text: " "},
 	},
@@ -130,7 +139,8 @@ var commonCases = []Tokens{
 		{Type: Punctuation, Text: "-"},
 		{Type: Comment, Text: "/*;*/"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "-/"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "/"},
 		{Type: Comment, Text: "/*\n\t;*/"},
 		{Type: Whitespace, Text: " "},
 	},
@@ -190,12 +200,14 @@ var commonCases = []Tokens{
 	{
 		{Type: Word, Text: "c22"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: ".@"},
+		{Type: Punctuation, Text: "."},
+		{Type: Punctuation, Text: "@"},
 	},
 	{
 		{Type: Word, Text: "c23"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: ".@"},
+		{Type: Punctuation, Text: "."},
+		{Type: Punctuation, Text: "@"},
 		{Type: Whitespace, Text: " "},
 	},
 	{
@@ -265,9 +277,12 @@ var commonCases = []Tokens{
 		{Type: Whitespace, Text: " "},
 		{Type: Punctuation, Text: "⁖"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "+⁖"},
+		{Type: Punctuation, Text: "+"},
+		{Type: Punctuation, Text: "⁖"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "+⁖*"},
+		{Type: Punctuation, Text: "+"},
+		{Type: Punctuation, Text: "⁖"},
+		{Type: Punctuation, Text: "*"},
 	},
 	{
 		{Type: Word, Text: "c35"},
@@ -473,9 +488,11 @@ var mySQLCases = []Tokens{
 	{
 		{Type: Word, Text: "m11"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "$$"},
+		{Type: Punctuation, Text: "$"},
+		{Type: Punctuation, Text: "$"},
 		{Type: Word, Text: "footext"},
-		{Type: Punctuation, Text: "$$"},
+		{Type: Punctuation, Text: "$"},
+		{Type: Punctuation, Text: "$"},
 		{Type: Whitespace, Text: " "},
 	},
 	{
@@ -501,7 +518,10 @@ var mySQLCases = []Tokens{
 	{
 		{Type: Word, Text: "m15"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "=@:$"},
+		{Type: Punctuation, Text: "="},
+		{Type: Punctuation, Text: "@"},
+		{Type: Punctuation, Text: ":"},
+		{Type: Punctuation, Text: "$"},
 	},
 	{
 		{Type: Word, Text: "m16"},
@@ -653,13 +673,15 @@ var postgreSQLCases = []Tokens{
 	{
 		{Type: Word, Text: "p11"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "$$"},
+		{Type: Punctuation, Text: "$"},
+		{Type: Punctuation, Text: "$"},
 		{Type: Whitespace, Text: " "},
 	},
 	{
 		{Type: Word, Text: "p12"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "$$"},
+		{Type: Punctuation, Text: "$"},
+		{Type: Punctuation, Text: "$"},
 	},
 	{
 		{Type: Word, Text: "p13"},
@@ -685,11 +707,13 @@ var postgreSQLCases = []Tokens{
 		{Type: Whitespace, Text: " "},
 		{Type: Punctuation, Text: "$"},
 		{Type: Word, Text: "foo"},
-		{Type: Punctuation, Text: "-$"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "$"},
 		{Type: Word, Text: "bar"},
 		{Type: Punctuation, Text: "$"},
 		{Type: Word, Text: "foo"},
-		{Type: Punctuation, Text: "-$"},
+		{Type: Punctuation, Text: "-"},
+		{Type: Punctuation, Text: "$"},
 		{Type: Whitespace, Text: " "},
 	},
 	{
@@ -707,7 +731,9 @@ var postgreSQLCases = []Tokens{
 	{
 		{Type: Word, Text: "p17"},
 		{Type: Whitespace, Text: " "},
-		{Type: Punctuation, Text: "=@:?"},
+		{Type: Punctuation, Text: "="},
+		{Type: Punctuation, Text: "@"},
+		{Type: Punctuation, Text: "?"},
 	},
 	{
 		{Type: Word, Text: "p18"},
@@ -1160,6 +1186,37 @@ var oddball2Cases = []Tokens{
 	},
 }
 
+// SQLx
+var combinedPunctuationCases = []Tokens{
+	{
+		{Type: Word, Text: "INSERT"},
+		{Type: Whitespace, Text: " "},
+		{Type: Word, Text: "INTO"},
+		{Type: Whitespace, Text: " "},
+		{Type: Word, Text: "foo"},
+		{Type: Whitespace, Text: " "},
+		{Type: Punctuation, Text: "("},
+		{Type: Word, Text: "a"},
+		{Type: Punctuation, Text: ","},
+		{Type: Word, Text: "b"},
+		{Type: Punctuation, Text: ","},
+		{Type: Word, Text: "c"},
+		{Type: Punctuation, Text: ","},
+		{Type: Word, Text: "d"},
+		{Type: Punctuation, Text: ")"},
+		{Type: Whitespace, Text: " "},
+		{Type: Word, Text: "VALUES"},
+		{Type: Punctuation, Text: "("},
+		{Type: Word, Text: "NOW"},
+		{Type: Punctuation, Text: "("},
+		{Type: Punctuation, Text: ")"},
+		{Type: Punctuation, Text: ","},
+		{Type: Whitespace, Text: " "},
+		{Type: ColonWord, Text: ":b"},
+		{Type: Punctuation, Text: ")"},
+	},
+}
+
 func doTests(t *testing.T, config Config, cases ...[]Tokens) {
 	for _, tcl := range cases {
 		for _, tc := range tcl {
@@ -1208,6 +1265,13 @@ func TestOddbal2Tokenizing(t *testing.T) {
 	c.NoticeColonWord = true
 	c.ColonWordIncludesUnicode = true
 	doTests(t, c, commonCases, oddball2Cases)
+}
+
+func TestCombinedPunctuationTokenizing(t *testing.T) {
+	c := MySQLConfig()
+	c.NoticeColonWord = true
+	c.NoticeQuestionMark = true
+	doTests(t, c, commonCases, combinedPunctuationCases)
 }
 
 func TestStrip(t *testing.T) {
